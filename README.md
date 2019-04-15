@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4.
 
+## Contents
+
+The aim of this project is to demonstrate TDD principles in Angular. It was developed over several lessons for a class of frontend developers. Use the commit history to see what to try first.
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
