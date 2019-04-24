@@ -35,7 +35,11 @@ describe('CalculatorUiComponent', () => {
 		let maybeButton = domElement.querySelector('.addButton');
 		expect(maybeButton).toBeTruthy();
 	})
-	// it should have a minus button
+	it('should have a minus button with the class minusButton', () => {
+		let buttons = Array.from(domElement.querySelectorAll('button'));
+		let maybeButton = buttons.find(b => b.classList.contains('minusButton'))
+		expect(maybeButton).toBeTruthy();
+	})
 	// it should have a span element with the result
 	// it should have two text inputs
 	// - två textfält för tal
