@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class MathematicsService {
 
-  constructor() { }
+	constructor() { }
+
+	plus(x: Number, y: Number) {
+		return NaN;
+	}
 }
