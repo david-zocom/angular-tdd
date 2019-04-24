@@ -11,6 +11,7 @@ Kravspec:
 describe('CalculatorUiComponent', () => {
 	let component: CalculatorUiComponent;
 	let fixture: ComponentFixture<CalculatorUiComponent>;
+	let domElement;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -22,10 +23,28 @@ describe('CalculatorUiComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(CalculatorUiComponent);
 		component = fixture.componentInstance;
+		domElement = fixture.nativeElement;
 		fixture.detectChanges();
 	});
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+
+	it('should have a plus button with the class addButton', () => {
+		let maybeButton = domElement.querySelector('.addButton');
+		expect(maybeButton).toBeTruthy();
+	})
+	// it should have a minus button
+	// it should have a span element with the result
+	// it should have two text inputs
+	// - två textfält för tal
+	// - knappar för att välja operator, + eller -
+	// - visar resultatet i ett span-element
 });
+
+
+
+
+
+//
