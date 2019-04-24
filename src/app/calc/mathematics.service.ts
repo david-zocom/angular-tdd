@@ -7,16 +7,19 @@ export class MathematicsService {
 
 
 	plus(x: number, y: number) {
-		if( isNaN(x) || isNaN(y) ) {
-			return NaN;
-		} else if( x === Infinity || y === Infinity ) {
-			return Infinity;
-		} else {
+		// Refaktorera: uttrycka koden effektivare
+		// if( isNaN(x) || isNaN(y) ) {
+		// 	return NaN;
+		// } else if( x === Infinity || y === Infinity ) {
+		// 	return Infinity;
+		// } else {
 			return y + x;
-		}
+		// }
 	}
 
-	minus() {}
+	minus(x: number, y: number): number {
+		return x - y;
+	}
 
 	constructor() { }
 }

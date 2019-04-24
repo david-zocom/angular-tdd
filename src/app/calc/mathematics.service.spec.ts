@@ -53,10 +53,13 @@ describe('MathematicsService', () => {
 			expect(service.minus(x, y)).toBeNaN();
 			expect(service.minus(y, x)).toBeNaN();
 		});
-		it('should return Infinity if either parameter is Infinity', () => {
+		it('should return +Infinity if first parameter is Infinity', () => {
 			let x = Infinity, y = 55;
 			expect(service.minus(x, y)).toBe(Infinity);
-			expect(service.minus(y, x)).toBe(Infinity);
+		});
+		it('should return -Infinity if second parameter is Infinity', () => {
+			let x = 43, y = Infinity;
+			expect(service.minus(x, y)).toBe(-Infinity);
 		});
 		it('should return regular number if either parameter is regular number', () => {
 			let x = 42, y = 55;
