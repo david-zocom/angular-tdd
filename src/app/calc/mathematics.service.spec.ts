@@ -30,6 +30,12 @@ describe('MathematicsService', () => {
 			expect(actual).toBeNaN();
 		});
 
+		it('should return infinity if either parameter is infinity', () => {
+			expect(true).toBe(false);
+		})
+		it('should return regular number if both parameters are regular numbers', () => {
+			expect(true).toBe(false);
+		})
 	})
 
 

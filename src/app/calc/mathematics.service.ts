@@ -5,9 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class MathematicsService {
 
-	constructor() { }
 
 	plus(x: Number, y: Number) {
 		return NaN;
 	}
+
+	constructor() { }
 }
