@@ -24,18 +24,27 @@ describe('MathematicsService', () => {
 			let x = NaN, y = 1;
 
 			// act
-			let actual = service.plus(x, y);
+			let actual1 = service.plus(x, y);
+			let actual2 = service.plus(y, x);
 
 			// assert
-			expect(actual).toBeNaN();
+			expect(actual1).toBeNaN();
+			expect(actual2).toBeNaN();
 		});
 
 		it('should return infinity if either parameter is infinity', () => {
-			expect(true).toBe(false);
+			let x = Infinity, y = 1;
+			let actual1 = service.plus(x, y);
+			let actual2 = service.plus(y, x);
+			expect(actual1).toBe(Infinity);
+			expect(actual2).toBe(Infinity);
 		})
 		it('should return regular number if both parameters are regular numbers', () => {
-			expect(true).toBe(false);
+			let x = 1, y = 42;
+			let actual = service.plus(x, y);
+			expect(actual).toBe(x + y);
 		})
+
 	})
 
 

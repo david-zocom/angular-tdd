@@ -6,8 +6,14 @@ import { Injectable } from '@angular/core';
 export class MathematicsService {
 
 
-	plus(x: Number, y: Number) {
-		return NaN;
+	plus(x: number, y: number) {
+		if( isNaN(x) || isNaN(y) ) {
+			return NaN;
+		} else if( x === Infinity || y === Infinity ) {
+			return Infinity;
+		} else {
+			return y + x;
+		}
 	}
 
 	constructor() { }
