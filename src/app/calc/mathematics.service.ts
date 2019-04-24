@@ -16,5 +16,7 @@ export class MathematicsService {
 		}
 	}
 
+	minus() {}
+
 	constructor() { }
 }
