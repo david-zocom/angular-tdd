@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { CalculatorUiComponent } from './calc/calculator-ui/calculator-ui.component';
+// import { CalculatorUiComponent } from './calc/calculator-ui/calculator-ui.component';
 import { CalcModule } from './calc/calc.module';
 
 @NgModule({
@@ -13,7 +14,8 @@ import { CalcModule } from './calc/calc.module';
 	imports: [
 		BrowserModule,
 		CalcModule,
-		CalculatorUiComponent
+		// CalculatorUiComponent,
+		FormsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

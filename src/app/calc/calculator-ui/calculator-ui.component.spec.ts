@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
+// import { CalcModule } from './../calc.module';
+// import { AppModule } from './../../app.module';
 import { CalculatorUiComponent } from './calculator-ui.component';
+import { MathematicsService } from './../mathematics.service';
 
 /*
 Kravspec:
@@ -15,7 +18,17 @@ describe('CalculatorUiComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ CalculatorUiComponent ]
+			declarations: [
+				CalculatorUiComponent
+			],
+			imports: [
+				FormsModule
+				// , AppModule
+				// , CalcModule
+			],
+			providers: [
+				MathematicsService
+			]
 		})
 		.compileComponents();
 	}));
@@ -45,6 +58,26 @@ describe('CalculatorUiComponent', () => {
 	// - två textfält för tal
 	// - knappar för att välja operator, + eller -
 	// - visar resultatet i ett span-element
+
+	describe('mock service', () => {
+		it('should show the result after plus button click', () => {
+			// kontrollera att class property "result" innehåller rätt värde
+
+			// Arrange
+			let alfa = 23, beta = 30;
+			let expectedResult = alfa + beta;
+			let mockService = jasmine.createSpyObj(['plus']);
+			mockService.plus.and.returnValue(expectedResult);
+			let component = new CalculatorUiComponent(mockService);
+
+			// Act
+			component.addButtonClick();
+
+			// Assert
+			expect(mockService.plus).toHaveBeenCalled();
+			expect(component.result).toBe(expectedResult);
+		})
+	})
 });
 
 

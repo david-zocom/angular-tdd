@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MathematicsService } from './../mathematics.service';
 
 @Component({
 	selector: 'app-calculator-ui',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./calculator-ui.component.css']
 })
 export class CalculatorUiComponent implements OnInit {
-	
-	constructor() { }
+	result: number = NaN;
+	alfa: number = -1;
+	beta: number = 22;
 
-	ngOnInit() {
+	constructor(private service: MathematicsService) { }
+
+	ngOnInit() { }
+
+	addButtonClick() {
+		this.result = this.service.plus(this.alfa, this.beta);
 	}
 
 }
+
+
+
+
+
+//
